@@ -18,5 +18,8 @@ class Solution {
             n=sum;
         }
         return sum;
+        
+       // return 1 + (num - 1)%9;
+
     }
 }
