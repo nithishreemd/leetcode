@@ -3,21 +3,23 @@ class Solution {
      {
         int start =0;
         int end =0;
-        int Maxlen=Math.min(s.length(),1);
-        Set<Character> Slide = new HashSet<>();
+        int Maxlen = Math.min(s.length(),1);
+        Set<Character> seen = new HashSet<>();
         while(end<s.length())
-            {
+        {
             char c = s.charAt(end);
-            while(Slide.contains(c))
-             {
-                Slide.remove(s.charAt(start));
-                start+=1;
-             }
-            Slide.add(c);
-            int window = end-start+1;
-            Maxlen=Math.max(Maxlen,window);
+            while(seen.contains(c))
+            {
+             seen.remove(s.charAt(start));
+             start+=1;
+            }
+            seen.add(c);
+            int win = end-start+1;
+            Maxlen = Math.max(Maxlen,win);
+
             end+=1;
-          }
-          return Maxlen;
-    }
+
+        }
+        return Maxlen;
+     }
 }
